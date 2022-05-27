@@ -6,7 +6,7 @@ const port = 3000;
 
 // Generate some interesting data by summing multiple sinewaves of different frequencies and amplitudes
 const persistence = 0.8;
-const periods = [ 1, 3, 7, 11, 23 ];
+const periods = [ 1, 3, 7, 11, 23, 41, 71 ];
 const amplitudes = periods.map((_, i) => persistence ** i);
 const total = amplitudes.reduce((acc, value) => acc += value, 0);
 
