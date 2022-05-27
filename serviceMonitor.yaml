@@ -1,0 +1,18 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    app: rug-node-exporter
+    prometheus: k8s
+  name: rug-node-exporter
+  namespace: monitoring
+spec:
+  endpoints:
+  - interval: 30s
+    port: web
+  namespaceSelector:
+    matchNames:
+    - monitoring
+  selector:
+    matchLabels:
+      app: rug-node-exporter

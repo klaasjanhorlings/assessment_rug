@@ -1,0 +1,8 @@
+docker build ./sine-source -t rug_node:local
+docker save rug_node:local > rug_node.tar
+
+microk8s ctr image import rug_node.tar
+microk8s kubectl apply -f config.yaml 
+
+
+microk8s ctr images rm docker.io/library/rug_node:local

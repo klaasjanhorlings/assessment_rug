@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: monitoring
+  name: rug-node-exporter
+  labels:
+    app: rug-node-exporter
+spec:
+  selector:
+    matchLabels:
+      app: rug-node-exporter
+  template:
+    metadata:
+      labels:
+        app: rug-node-exporter
+    spec:
+      containers:
+      - name: rug-node-exporter
+        image: rug_node:local
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3000
