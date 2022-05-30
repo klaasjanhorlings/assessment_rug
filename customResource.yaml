@@ -1,0 +1,8 @@
+apiVersion: "rug.nl/v1"
+kind: House
+metadata:
+  name: the-cave
+spec:
+  address: Suikerlaan
+  houseNumber: "1"
+  squareMeters: 2000
